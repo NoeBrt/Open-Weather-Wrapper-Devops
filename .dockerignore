@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Directory for npm packages
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Git directory and files
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional editor directories and files
+.vscode
+*.swp
+*.swo
+.idea/
+
+# Build directories
+dist/
+build/
