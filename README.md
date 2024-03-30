@@ -1,20 +1,47 @@
 # Meteo Checker App
 
+The Meteo Checker App allows you to retrieve weather information using latitude and longitude coordinates via the OpenWeather API.
+
 ## Installation 
 
-### docker 
-You can pull the dockerimage with
+### Docker 
+You can pull the Docker image with the following command:
 ```
-docker push noebrt/meteo_checker:latest
+docker pull noebrt/meteo_checker:latest
 ```
 
 ## Version
-Node version : alpine3.19 
-no vulnerabilities
+Node version: alpine3.19 
+No vulnerabilities detected.
 
 ## How To Use 
 
+To use the Meteo Checker App, follow these steps:
+
+1. Make sure you have Docker installed on your system.
+
+2. Run the Docker container with the following command, replacing the placeholders with your actual latitude, longitude, and OpenWeather API key:
 ```
-docker run --env LAT="31.2504" --env LONG="-99.2506" --env API_KEY="Your Open Weather APi Key"   noebr/meteo_checker:latest
+docker run --env LAT="Your Latitude" --env LONG="Your Longitude" --env API_KEY="Your OpenWeather API Key" noebr/meteo_checker:latest
 ```
 
+## Example Queries
+
+Here are some example queries you can use with the Meteo Checker App:
+
+- Retrieve current weather for Villejuif:
+  ```
+  docker run --env LAT="48.7887654119804" --env LONG="2.3638803269592468" --env API_KEY="Your API Key" noebr/meteo_checker:latest
+  ```
+
+- Get weather for Tours:
+  ```
+  docker run --env LAT="47.39563393240081" --env LONG="0.6901326836654383" --env API_KEY="Your API Key" noebr/meteo_checker:latest
+  ```
+
+- Check weather conditions for specific coordinates:
+  ```
+  docker run --env LAT="48.8566" --env LONG="2.3522" --env API_KEY="Your API Key" noebr/meteo_checker:latest
+  ```
+
+Feel free to explore more queries based on your needs and geographic locations!
