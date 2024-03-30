@@ -40,7 +40,7 @@ Here are some example queries you can use with the Meteo Checker App:
   ```
   docker run --env LAT="47.39563393240081" --env LONG="0.6901326836654383" --env API_KEY="Your API Key" noebrt/meteo_checker:latest
   ```
-  Feel free to explore more queries based on your needs and geographic locations!
+Feel free to explore more queries based on your needs and geographic locations!
 
 
 
