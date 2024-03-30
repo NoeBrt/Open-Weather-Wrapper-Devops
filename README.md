@@ -24,6 +24,8 @@ To use the Meteo Checker App, follow these steps:
 ```
 docker run --env LAT="Your Latitude" --env LONG="Your Longitude" --env API_KEY="Your OpenWeather API Key" noebrt/meteo_checker:latest
 ```
+## API Key 
+Obtain an API key by signing up on the OpenWeather website [here](https://openweathermap.org/api).
 
 ## Example Queries
 
@@ -38,10 +40,7 @@ Here are some example queries you can use with the Meteo Checker App:
   ```
   docker run --env LAT="47.39563393240081" --env LONG="0.6901326836654383" --env API_KEY="Your API Key" noebrt/meteo_checker:latest
   ```
+  Feel free to explore more queries based on your needs and geographic locations!
 
-- Check weather conditions for specific coordinates:
-  ```
-  docker run --env LAT="48.8566" --env LONG="2.3522" --env API_KEY="Your API Key" noebr/meteo_checker:latest
-  ```
 
-Feel free to explore more queries based on your needs and geographic locations!
+
