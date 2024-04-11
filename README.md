@@ -96,5 +96,7 @@ Feel free to explore more queries based on your needs and geographic locations!
 
 Lack of vulnerabilities
 
+For patch tar 6.2.1 I install the new patch npm install -g npm@10.5.2
+
 
 
