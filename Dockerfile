@@ -1,6 +1,5 @@
 # Step 1: Specify the base image
-FROM node:20.11-slim
-
+FROM node:alpine3.19
 # Step 2: Set the working directory in the container
 WORKDIR /usr/src/app
 
