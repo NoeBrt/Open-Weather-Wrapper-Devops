@@ -87,7 +87,12 @@ Response :
 ```
 Feel free to explore more queries based on your needs and geographic locations!
 
-## Why I used node:20.11-slim
+## Technical choise 
+* Wrapper : Node JS
+  - JavaScript is one of the most pratical language to manage json api, especially with axios
+* Container : Docker
+  - Docker is the most used container technologies
+
 
 Lack of vulnerabilities
 
