@@ -42,7 +42,7 @@ Here are some example queries you can use with the Meteo Checker App:
   ```
 
 ## Example Response
-
+https://github.com/efrei-ADDA84/20230580
   ```
   docker run --env LAT="48.7887654119804" --env LON="2.3638803269592468" --env API_KEY="Your API Key" noebrt/meteo_checker:latest
   ```
@@ -86,6 +86,10 @@ Response :
 }
 ```
 Feel free to explore more queries based on your needs and geographic locations!
+
+## Why I used node:20.11-slim
+
+Lack of vulnerabilities
 
 
 
