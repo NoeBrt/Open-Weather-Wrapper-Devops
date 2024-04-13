@@ -13,6 +13,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     
+    - name: Use Node.js version 20
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+    
     - name : Check Dockerfile with hadolint
       uses: hadolint/hadolint-action@v3.1.0
       with:
