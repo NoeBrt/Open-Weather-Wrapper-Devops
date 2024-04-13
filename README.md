@@ -7,7 +7,8 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
 
 * We should use the app like and API
 * **Run** the app docker images with ```docker run -p 8080:8080 --env API_KEY="YOUR API KEY" noebrt/meteo_checker```
-* **Request** our app with a **CURL query** : curl "http://localhost:8080/?lat=48.75722028315804&lon=2.3261414356815058"  
+* **Request** our app with a **CURL query** : curl "http://localhost:8080/?lat=48.75722028315804&lon=2.3261414356815058"
+* Automate the build and the push of a docker images after each push with a **Github Action Workflow**
 
 ### Docker 
 You can pull the Docker image with the following command:
