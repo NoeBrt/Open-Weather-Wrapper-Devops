@@ -202,4 +202,7 @@ The Meteo_Checker app workflow is structured in a few steps:
 * Build the Docker image as noebrt/meteo_checker:latest
 * Push the image on noebrt/meteo_checker:latest DockerHub Repository
 
+## Conclusion 
+
+This lab showed me the importance of having a smooth process to deploy our applications. It's going to be really helpful for my Edge AI work at Ecole Polytechnique. We need to figure out how to set up a Nvidia Deepstream Computer Vision app on a bunch of Nvidia Jetson Nano devices, and there are a lot of Nvidia Dependancies to deal with. Having a solid way to get things up and running is key, and what I learned here will be super useful for that. It's my first step toward setting up a real CI/CD pipeline.
 
