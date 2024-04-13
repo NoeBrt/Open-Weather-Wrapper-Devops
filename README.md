@@ -9,6 +9,8 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
 * **Run** the app docker images with ```docker run -p 8080:8080 --env API_KEY="YOUR API KEY" noebrt/meteo_checker```
 * **Request** our app with a **CURL query** : ```curl "http://localhost:8080/?lat=48.75722028315804&lon=2.3261414356815058"```
 * Automate the build and the push of a docker images after each push with a **Github Action Workflow**
+* No sensitive variable should be store in the app files
+* The Dockerfile should be checked with Hadolint before docker build
 
 ## Languages Used
 
@@ -163,9 +165,20 @@ jobs:
       run: docker push noebrt/meteo_checker:latest
 ```
 
+The workflows use some Github actions to build and publish a docker images on dockerhub 
 
+**NO SENSIBLE VARIABLE ARE ACCESSIBLE OR STORED, DOCKER CREDENTIALS AND API KEY IS STORED IN GITHUB SECRETS ENV**
+
+### Steps
 
 The Meteo_Checker app workflow is structured in few steps :
+
+* Checkout the repository
+* Check the conformity of the Dockerfile with **hadolint**, if not, the action is **aborted**
+* Login to dockerhub with the credentials stored as **Github Secrets Variables**
+* Build the docker image as noebrt/meteo_checker:latest
+* Push the image on noebrt/meteo_checker:latest DockerHub Repository
+
 
 
 
