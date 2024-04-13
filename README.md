@@ -126,16 +126,8 @@ Response :
 ```
 Feel free to explore more queries based on your needs and geographic locations!
 
-## Technical choise 
-* Wrapper : Node JS
-  - JavaScript is one of the most pratical language to manage json api, especially with axios
-* Container : Docker
-  - Docker is the most used container technologies
-
-
-Lack of vulnerabilities
-
-For patch tar 6.2.1 I install the new patch npm install -g npm@10.5.2
+## Automatisation & Github Workflow
+The Meteo_Checker app workflow is structured in few steps :
 
 
 
