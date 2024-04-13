@@ -16,7 +16,7 @@ node_modules/
 # Git directory and files
 .git
 .gitignore
-
+.github
 # Docker files
 Dockerfile
 .dockerignore
