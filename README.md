@@ -14,8 +14,15 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
 
 JavaScript (Node JS alpine3.19)
 
+## Dependencies 
 
-### D
+* Npm 10.5.2
+* openssl 3.1.4-r6
+* tar 1.35-r2
+* dotenv 16.4.5 (Usage of env variable)
+* express 4.19.2 (Creation of the API)
+
+### Docker
 You can pull the Docker image with the following command:
 ```
 docker pull noebrt/meteo_checker:latest
