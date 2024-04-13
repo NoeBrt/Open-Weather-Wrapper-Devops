@@ -43,6 +43,15 @@ JavaScript (Node JS Alpine 3.19)
 
 The choice of versions is related to their lack of vulnerabilities.
 
+## Application Structure
+The application is composed of two JavaScript scripts:
+* **OpenWeatherAPIWrapper.js** : contains a method that sends a request to OpenWeatherAPI with four parameters: lat, lon, appid, and metrics
+* **Index.js** : contains the methods for **our** API: "/" path with lat and lon parameter uses OpenWeatherAPIWrapper.js method to return the response
+  - if one of the parameters is not selected or there is any error with the request, a code 500 error message is displayed
+* **A Dokerfile** Contain the instruction for the creation of an Docker Image
+* ***A Github Workflow*** : build_and_push.yml contains the instructions to execute in a virtual machine during a github push.  
+ 
+
 ## Security
 
 0 Vulnerabilities detected on Trivy or Docker Scout
@@ -188,14 +197,9 @@ The Meteo_Checker app workflow is structured in a few steps:
 
 * Checkout the repository
 * Check the conformity of the Dockerfile with **Hadolint**, if not, the action is **aborted**
-* Login to Docker Hub with the credentials stored
-
+* Login to Docker Hub with the credentials store
  as **GitHub Secrets Variables**
 * Build the Docker image as noebrt/meteo_checker:latest
 * Push the image on noebrt/meteo_checker:latest DockerHub Repository
 
-## Application Structure
-The application is composed of two JavaScript scripts:
-* OpenWeatherAPIWrapper.js: contains a method that sends a request to OpenWeatherAPI with four parameters: lat, lon, appid, and metrics
-* Index.js: contains the methods for **our** API: "/" path with lat and lon parameter uses OpenWeatherAPIWrapper.js method to return the response
-  - if one of the parameters is not selected or there is any error with the request, a code 500 error message is displayed
+
