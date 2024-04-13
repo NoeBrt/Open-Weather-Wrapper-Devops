@@ -4,7 +4,6 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
 
 ## Table of Contents
 
-- [TP2 DevOps: Meteo Checker App And Auto-deployment on Docker](#tp2-devops-meteo-checker-app-and-auto-deployment-on-docker)
   - [Table of Contents](#table-of-contents)
   - [Lab Aims](#lab-aims)
   - [Languages Used](#languages-used)
@@ -22,6 +21,7 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
   - [Automation \& GitHub Workflow](#automation--github-workflow)
     - [Steps](#steps)
   - [Conclusion](#conclusion)
+
 ## Lab Aims
 
 * We should use the app as an API ✓
