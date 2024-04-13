@@ -1,8 +1,13 @@
-# Meteo Checker App
+# TP2 Devops : Meteo Checker App And auto-deployement on docker
 
 The Meteo Checker App allows you to retrieve weather information using latitude and longitude coordinates via the OpenWeather API.
 
-## Installation 
+
+## Lab Aims
+
+* We should use the app like and API
+* **Run** the app docker images with ```docker run -p 8080:8080 --env API_KEY="YOUR API KEY" noebrt/meteo_checker```
+* **Request** our app with a **CURL query** : curl "http://localhost:8080/?lat=48.75722028315804&lon=2.3261414356815058"  
 
 ### Docker 
 You can pull the Docker image with the following command:
