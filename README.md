@@ -1,5 +1,24 @@
 # TP2 DevOps: Meteo Checker App And Auto-deployment on Docker
 
+## Table of Contents
+
+1. [Lab Aims](#lab-aims)
+2. [Languages Used](#languages-used)
+3. [Dependencies](#dependencies)
+4. [Security](#security)
+   - [Trivy](#trivy)
+   - [Docker Scout](#docker-scout)
+5. [How To Use](#how-to-use)
+   - [Node.js](#nodejs)
+   - [Docker](#docker)
+6. [API Key](#api-key)
+7. [Example Queries](#example-queries)
+8. [Example Response](#example-response)
+9. [Automation & GitHub Workflow](#automation--github-workflow)
+   - [Steps](#steps)
+10. [Application Structure](#application-structure)
+
+
 The Meteo Checker App allows you to retrieve weather information using latitude and longitude coordinates via the OpenWeather API.
 
 ## Lab Aims
