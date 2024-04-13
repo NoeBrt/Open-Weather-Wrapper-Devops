@@ -19,6 +19,7 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
 9. [Example Response](#example-response)
 10. [Automation & GitHub Workflow](#automation--github-workflow)
    - [Steps](#steps)
+11. [Conclusion](#Conclusion)
 
 ## Lab Aims
 
