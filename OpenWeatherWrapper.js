@@ -1,4 +1,3 @@
-// weather.js
 require('dotenv').config();
 const axios = require('axios');
 
