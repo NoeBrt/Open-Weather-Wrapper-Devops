@@ -4,23 +4,24 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
 
 ## Table of Contents
 
-1. [Lab Aims](#lab-aims)
-2. [Languages Used](#languages-used)
-3. [Dependencies](#dependencies)
-4. [Application Structure](#application-structure)
-5. [Security](#security)
-   - [Trivy](#trivy)
-   - [Docker Scout](#docker-scout)
-6. [How To Use](#how-to-use)
-   - [Node.js](#nodejs)
-   - [Docker](#docker)
-7. [API Key](#api-key)
-8. [Example Queries](#example-queries)
-9. [Example Response](#example-response)
-10. [Automation & GitHub Workflow](#automation--github-workflow)
-   - [Steps](#steps)
-11. [Conclusion](#Conclusion)
-
+- [TP2 DevOps: Meteo Checker App And Auto-deployment on Docker](#tp2-devops-meteo-checker-app-and-auto-deployment-on-docker)
+  - [Table of Contents](#table-of-contents)
+  - [Lab Aims](#lab-aims)
+  - [Languages Used](#languages-used)
+  - [Dependencies](#dependencies)
+  - [Application Structure](#application-structure)
+  - [Security](#security)
+    - [Trivy](#trivy)
+    - [Docker Scout](#docker-scout)
+  - [How To Use](#how-to-use)
+    - [Node.js](#nodejs)
+    - [Docker](#docker)
+  - [API Key](#api-key)
+  - [Example Queries](#example-queries)
+  - [Example Response](#example-response)
+  - [Automation \& GitHub Workflow](#automation--github-workflow)
+    - [Steps](#steps)
+  - [Conclusion](#conclusion)
 ## Lab Aims
 
 * We should use the app as an API ✓
