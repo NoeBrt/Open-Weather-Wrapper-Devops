@@ -31,7 +31,8 @@ The choice of version is related to their lack of vulnerabilities.
 ### Trivy 
 
 ```sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.18.3 noebrt/meteo_checker```
-![Uploading Capture d’écran 2024-04-13 à 21.20.28.png…]()
+
+<img width="1185" alt="Capture d’écran 2024-04-13 à 21 20 28" src="https://github.com/efrei-ADDA84/20230580/assets/94910317/4f900040-1df5-4aae-b25d-e3e34509e270">
 
 
 
