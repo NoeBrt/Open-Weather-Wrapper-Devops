@@ -9,8 +9,6 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 WORKDIR /usr/src/app
 
 # Copying package.json and package-lock.json before running npm install
-# allows for Docker's layer caching to speed up builds, as dependencies
-# will only be re-installed if these files change.
 COPY package*.json ./
 
 # Step 4: Install dependencies
@@ -28,7 +26,6 @@ RUN npm install express
 # Step 6: Expose the port your app runs on
 EXPOSE 8080
 # Step 7: Use the non-root user to run your application
-
 USER appuser
 # Step 8: Define the command to run your app using CMD which defines your runtime
 CMD ["node", "index.js"]
