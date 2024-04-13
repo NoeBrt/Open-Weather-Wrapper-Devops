@@ -42,6 +42,8 @@ The choice of version is related to their lack of vulnerabilities.
 
 ## How To Use 
 
+Two way of using the API
+
 ### Node js
 
 * Install npm and Node js
@@ -51,22 +53,16 @@ The choice of version is related to their lack of vulnerabilities.
 
 ### Docker
 
-* Pull the Docker image with the following command:
-```
-docker pull noebrt/meteo_checker:latest
-```
 
-
-
-
-To use the Meteo Checker App, follow these steps:
 
 1. Make sure you have Docker installed on your system.
+2. Pull the Docker image with the following command: ```docker pull noebrt/meteo_checker:latest```
 
-2. Run the Docker container with the following command, replacing the placeholders with your actual latitude, longitude, and OpenWeather API key:
-```
-docker run --env LAT="Your Latitude" --env LON="Your Longitude" --env API_KEY="Your OpenWeather API Key" noebrt/meteo_checker:latest
-```
+3. Run the Docker container on the PORT 8080 with the following command, replacing the placeholders with your actual OpenWeather API key (We could also use a build ARG with my own API key, but can cause api request limit issue)
+```docker run -p 8080:8080 --env API_KEY="YOUR API KEY" noebrt/meteo_checker```
+4. Query the API with a curl request or in your browser : ```curl "http://localhost:8080/?lat=' your latitude '&lon=' your longitude '"```
+   
+
 ## API Key 
 Obtain an API key by signing up on the OpenWeather website [here](https://openweathermap.org/api).
 
