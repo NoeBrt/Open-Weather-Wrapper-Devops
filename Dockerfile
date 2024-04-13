@@ -16,13 +16,13 @@ COPY package*.json ./
 RUN npm install -g npm@10.5.2 && npm cache clean --force
 
 # Step 5: Install system dependencies (if any)
-RUN apk update && apk upgrade && apk add --no-cache openssl
+RUN apk update && apk upgrade && apk add --no-cache openssl=3.1.4-r6
 # install tar 6.2.1 
-RUN apk add --no-cache tar --version "6.2.1"
+RUN apk add --no-cache tar=1.35-r2
 
 COPY . .
-RUN npm install dotenv
-RUN npm install express
+RUN npm install dotenv@16.4.5
+RUN npm install express@@4.19.2
 # Step 6: Expose the port your app runs on
 EXPOSE 8080
 # Step 7: Use the non-root user to run your application
