@@ -24,8 +24,9 @@ RUN apk add --no-cache tar --version "6.2.1"
 
 COPY . .
 RUN npm install dotenv
+RUN npm install express
 # Step 6: Expose the port your app runs on
-EXPOSE 3000
+EXPOSE 8080
 # Step 7: Use the non-root user to run your application
 
 USER appuser

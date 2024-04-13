@@ -1,6 +1,6 @@
 // index.js
 const express = require('express');
-const getWeatherData = require('./weather'); // Import the weather data fetching function
+const getWeatherData = require('./OpenWeatherWrapper'); // Import the weather data fetching function
 const app = express();
 const port = process.env.PORT || 8080;
 
