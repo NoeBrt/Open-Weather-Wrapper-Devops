@@ -50,6 +50,7 @@ Two way of using the API
 
 * Install npm and Node js
 * Load the dependencies seen above with npm install
+* Add your api key as a API_KEY variable in a .env file 
 * Run ```node index.js```
 * Query the API with a curl request or in your browser : ```curl "http://localhost:8080/?lat=' your latitude '&lon=' your longitude '"```
 
@@ -179,6 +180,11 @@ The Meteo_Checker app workflow is structured in few steps :
 * Build the docker image as noebrt/meteo_checker:latest
 * Push the image on noebrt/meteo_checker:latest DockerHub Repository
 
+## Application Structure
+The application is composed by two js scripts 
+* OpenWeatherAPIWrapper.js :  contain a method that send a request to OpenWeatherApi with 4 parameters : lat,lon, appid and metrics
+* Index.js : contains the methods for **our** API  : "/" path with lat and lon parameter use OpenWeatherAPIWrapper.js method to return the response
+  - if one of the parameter is not selected or there is any error with the request, a code 500 error message is displayed 
 
 
 
