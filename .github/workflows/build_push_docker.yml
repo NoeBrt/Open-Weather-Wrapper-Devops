@@ -16,7 +16,7 @@ jobs:
     - name : Check Dockerfile with hadolint
       uses: hadolint/hadolint-action@v3.1.0
       with:
-        dockerfile: Dockerfile
+        dockerfile: "./Dockerfile"
 
     - name: Login to Docker Hub
       uses: docker/login-action@v3
@@ -26,10 +26,6 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t noebrt/meteo_checker:latest .
-
- 
-    - name: Lint Dockerfile
-      run: hadolint Dockerfile
 
     - name: Push Docker image
       run: docker push noebrt/meteo_checker:latest
