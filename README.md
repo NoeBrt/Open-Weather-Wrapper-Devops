@@ -13,13 +13,12 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
    - [Docker Scout](#docker-scout)
 6. [How To Use](#how-to-use)
    - [Node.js](#nodejs)
-   - [Docker](#docker)
 7. [API Key](#api-key)
 8. [Example Queries](#example-queries)
 9. [Example Response](#example-response)
 10. [Automation & GitHub Workflow](#automation--github-workflow)
    - [Steps](#steps)
-12. [Conclusion](#Conclusion)
+11. [Conclusion](#Conclusion)
 
 ## Lab Aims
 
