@@ -40,15 +40,24 @@ The choice of version is related to their lack of vulnerabilities.
 
 
 
+## How To Use 
+
+### Node js
+
+* Install npm and Node js
+* Load the dependencies seen above with npm install
+* Run ```node index.js```
+* Query the API with a curl request or in your browser : ```curl "http://localhost:8080/?lat=' your latitude '&lon=' your longitude '"```
+
 ### Docker
-You can pull the Docker image with the following command:
+
+* Pull the Docker image with the following command:
 ```
 docker pull noebrt/meteo_checker:latest
 ```
 
 
 
-## How To Use 
 
 To use the Meteo Checker App, follow these steps:
 
