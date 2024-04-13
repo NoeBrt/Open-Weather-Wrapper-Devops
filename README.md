@@ -127,6 +127,44 @@ Response :
 Feel free to explore more queries based on your needs and geographic locations!
 
 ## Automatisation & Github Workflow
+
+`build_and_push.yml`
+```
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - Tp2
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name : Check Dockerfile with hadolint
+      uses: hadolint/hadolint-action@v3.1.0
+      with:
+        dockerfile: "./Dockerfile"
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build Docker image
+      run: docker build -t noebrt/meteo_checker:latest .
+
+    - name: Push Docker image
+      run: docker push noebrt/meteo_checker:latest
+```
+
+
+
 The Meteo_Checker app workflow is structured in few steps :
 
 
