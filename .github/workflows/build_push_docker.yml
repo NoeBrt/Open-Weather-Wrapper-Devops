@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
     
     - name : Check Dockerfile with hadolint
       uses: hadolint/hadolint-action@v3.1.0
