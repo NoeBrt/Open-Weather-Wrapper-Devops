@@ -28,6 +28,13 @@ The choice of version is related to their lack of vulnerabilities.
 
 0 Vulnerabilities detected on Trivy or Docker Scout
 
+### Trivy 
+
+```sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.18.3 noebrt/meteo_checker```
+![Uploading Capture d’écran 2024-04-13 à 21.20.28.png…]()
+
+
+
 ### Docker
 You can pull the Docker image with the following command:
 ```
