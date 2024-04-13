@@ -31,8 +31,12 @@ The choice of version is related to their lack of vulnerabilities.
 ### Trivy 
 
 ```sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.18.3 noebrt/meteo_checker```
+<img width="900" alt="Capture d’écran 2024-04-13 à 21 14 46" src="https://github.com/efrei-ADDA84/20230580/assets/94910317/4d6d82c8-0481-4631-91b3-32652f017234">
 
-<img width="1185" alt="Capture d’écran 2024-04-13 à 21 20 28" src="https://github.com/efrei-ADDA84/20230580/assets/94910317/4f900040-1df5-4aae-b25d-e3e34509e270">
+
+### Docker Scout
+
+<img width="900" alt="Capture d’écran 2024-04-13 à 21 20 28" src="https://github.com/efrei-ADDA84/20230580/assets/94910317/4f900040-1df5-4aae-b25d-e3e34509e270">
 
 
 
