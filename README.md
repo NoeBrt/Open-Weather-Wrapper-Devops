@@ -22,15 +22,19 @@ JavaScript (Node JS alpine3.19)
 * dotenv 16.4.5 (Usage of env variable)
 * express 4.19.2 (Creation of the API)
 
+The choice of version is related to their lack of vulnerabilities.
+
+## Security 
+
+0 Vulnerabilities detected on Trivy or Docker Scout
+
 ### Docker
 You can pull the Docker image with the following command:
 ```
 docker pull noebrt/meteo_checker:latest
 ```
 
-## Version
-Node version: alpine3.19 
-No vulnerabilities detected.
+
 
 ## How To Use 
 
