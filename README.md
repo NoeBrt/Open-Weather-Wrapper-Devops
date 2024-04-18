@@ -51,8 +51,9 @@ The choice of versions is related to their lack of vulnerabilities.
 ## Application Structure
 The application is composed of two JavaScript scripts:
 * **OpenWeatherAPIWrapper.js** : contains a method that sends a request to OpenWeatherAPI with four parameters: lat, lon, appid, and metrics
-* **Index.js** : contains the methods for **our** API: "/" path with lat and lon parameter uses OpenWeatherAPIWrapper.js method to return the response
+* **Index.js** : contains the methods for **our** API: "/" path with lat and lon parameter uses OpenWeatherAPIWrapper.js method to return the response and increment the http_requests_total variable of prometeus metrics
   - if one of the parameters is not selected or there is any error with the request, a code 500 error message is displayed
+  - "/metrics" for visualise metrics of the api, like http_requests_total for the number of request.
 * **A Dokerfile** Contain the instruction for the creation of an Docker Image
 * ***A Github Workflow*** : build_and_push.yml contains the instructions to execute in a virtual machine during a github push.  
  
@@ -67,35 +68,11 @@ The application is composed of two JavaScript scripts:
 
 ![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/c6e5379a-90fc-48c4-b296-f83128f78a63)
 
-
-### Docker Scout
-
-<img width="900" alt="Capture d’écran 2024-04-13 à 21 20 28" src="https://github.com/efrei-ADDA84/20230580/assets/94910317/4f900040-1df5-4aae-b25d-e3e34509e270">
-
 ## How To Use
 
-Two ways of using the API
+Query the API with the ACI Endpoint or in your browser: ```http://devops-20230580.francesouth.azurecontainer.io:8081/?lat=' your latitude '&lon=' your longitude '"```
 
-### Node.js
-
-* Install npm and Node.js
-* Load the dependencies seen above with npm install
-* Add your API key as an API_KEY variable in a .env file
-* Run `node index.js`
-* Query the API with a cURL request or in your browser: `curl "http://localhost:8080/?lat=' your latitude '&lon=' your longitude '"`
-
-### Docker
-
-1. Make sure you have Docker installed on your system.
-2. Pull the Docker image with the following command: `docker pull noebrt/meteo_checker:latest`
-3. Run the Docker container on the PORT 8080 with the following command, replacing the placeholders with your actual OpenWeather API key (We could also use a build ARG with my own API key, but it can cause API request limit issues):
-```
-docker run -p 8080:8080 --env API_KEY="YOUR API KEY" noebrt/meteo_checker
-```
-4. Query the API with a cURL request or in your browser: `curl "http://localhost:8080/?lat=' your latitude '&lon=' your longitude '"`
-
-## API Key
-Obtain an API key by signing up on the OpenWeather website [here](https://openweathermap.org/api).
+Check the metrics like the number of request 
 
 ## Example Queries
 
