@@ -91,6 +91,13 @@ Response:
 
 ![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/19a885f6-999a-48c1-84af-1a47ae88d5cf)
 
+```
+http://devops-20230580.francesouth.azurecontainer.io:8081/metrics
+```
+Response:
+
+![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/5d6a14ca-c581-4880-9568-d9f1fb16f97f)
+
 Feel free to explore more queries based on your needs and geographic locations!
 
 ## Automation & GitHub Workflow
