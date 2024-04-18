@@ -49,4 +49,4 @@ jobs:
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: 20230580
           secure-environment-variables: API_KEY=$({secrets.OPENWEATHER_API_KEY})
-          location: 'francecentral'
+          location: 'francesouth'
