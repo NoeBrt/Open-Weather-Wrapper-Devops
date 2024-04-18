@@ -95,43 +95,8 @@ docker run --env LAT="48.7887654119804" --env LON="2.3638803269592468" --env API
 ```
 Response:
 
-```
-{
-  coord: { lon: 2.3639, lat: 48.7888 },
-  weather: [
-    {
-      id: 803,
-      main: 'Clouds',
-      description: 'broken clouds',
-      icon: '04d'
-    }
-  ],
-  base: 'stations',
-  main: {
-    temp: 10.28,
-    feels_like: 9.45,
-    temp_min: 9.26,
-    temp_max: 11.95,
-    pressure: 997,
-    humidity: 80
-  },
-  visibility: 10000,
-  wind: { speed: 3.09, deg: 160 },
-  clouds: { all: 75 },
-  dt: 1711805837,
-  sys: {
-    type: 1,
-    id: 6548,
-    country: 'FR',
-    sunrise: 1711776701,
-    sunset: 1711822671
-  },
-  timezone: 3600,
-  id: 2968705,
-  name: 'Villejuif',
-  cod: 200
-}
-```
+![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/19a885f6-999a-48c1-84af-1a47ae88d5cf)
+
 Feel free to explore more queries based on your needs and geographic locations!
 
 ## Automation & GitHub Workflow
@@ -143,35 +108,58 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - Tp2
+      - Tp3
 
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    
-    - name : Check Dockerfile with hadolint
-      uses: hadolint/hadolint-action@v3.1.0
-      with:
-        dockerfile: "./Dockerfile"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build Docker image
-      run: docker build -t noebrt/meteo_checker:latest .
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Push Docker image
-      run: docker push noebrt/meteo_checker:latest
+      - name: Check Dockerfile with hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: "./Dockerfile"
+
+      - name: 'Docker Login'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}  # You need to define or add this secret if not already done
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: 'Build and Push Image'
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230580:${{ github.sha }}
+
+      - name: 'Deploy to Azure Container Instances'
+        uses: 'azure/aci-deploy@v1'
+        with:
+          resource-group: ${{ secrets.RESOURCE_GROUP }}
+          dns-name-label: devops-20230580
+          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230580:${{ github.sha }}
+          registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          registry-username: ${{ secrets.REGISTRY_USERNAME }}
+          registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+          name: 20230580
+          secure-environment-variables: API_KEY=${{secrets.OPENWEATHER_API_KEY}}
+          location: 'francesouth'
+          ports: 8081
+
 ```
 
-The workflows use some GitHub actions to build and publish a Docker image on DockerHub.
+The workflows use some GitHub actions to build an docker image and deploy it as an ACI.
 
 **NO SENSITIVE VARIABLE ARE ACCESSIBLE OR STORED, DOCKER CREDENTIALS AND API KEY IS STORED IN GITHUB SECRETS ENV**
 
@@ -181,12 +169,12 @@ The Meteo_Checker app workflow is structured in a few steps:
 
 * Checkout the repository
 * Check the conformity of the Dockerfile with **Hadolint**, if not, the action is **aborted**
-* Login to Docker Hub with the credentials store
+* Login to Docker with the ACR credentials stored
  as **GitHub Secrets Variables**
-* Build the Docker image as noebrt/meteo_checker:latest
-* Push the image on noebrt/meteo_checker:latest DockerHub Repository
+* Build and push Docker image on the ACR
+* Deploy an ACI that contains the built image with an API_KEY parameter equals to the secret Openweather api variable 
 
 ## Conclusion 
 
-This lab showed me the importance of having a smooth process to deploy our applications. It's going to be really helpful for my Edge AI work at Ecole Polytechnique. We need to figure out how to set up a Nvidia Deepstream Computer Vision app on a bunch of Nvidia Jetson Nano devices, and there are a lot of Nvidia Dependancies to deal with. Having a solid way to get things up and running is key, and what I learned here will be super useful for that. It's my first step toward setting up a real CI/CD pipeline.
+Same as the tp2, This lab showed me the importance of having a smooth process to deploy our applications. It's going to be really helpful for my Edge AI work at Ecole Polytechnique. We need to figure out how to set up a Nvidia Deepstream Computer Vision app on a bunch of Nvidia Jetson Nano devices, and there are a lot of Nvidia Dependancies to deal with. Having a solid way to get things up and running is key, and what I learned here will be super useful for that. It's my first step toward setting up a real CI/CD pipeline. The push and deployement on ACR and as ACI show me a new way to store app images but also to use app directly on a cloud.
 
