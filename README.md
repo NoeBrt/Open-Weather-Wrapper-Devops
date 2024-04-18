@@ -75,19 +75,17 @@ Check the metrics like the number of request: ```http://devops-20230580.franceso
 Here are some example queries you can use with the Meteo Checker App:
 
 - Retrieve current weather for Villejuif:
-  ```
-  docker run --env LAT="48.7887654119804" --env LON="2.3638803269592468" --env API_KEY="Your API Key" noebrt/meteo_checker:latest
-  ```
 
-- Get weather for Tours:
-  ```
-  docker run --env LAT="47.39563393240081" --env LON="0.6901326836654383" --env API_KEY="Your API Key" noebrt/meteo_checker:latest
-  ```
+  [http://devops-20230580.francesouth.azurecontainer.io:8081/?lat=48.7887654119804&lon=2.3638803269592468](http://devops-20230580.francesouth.azurecontainer.io:8081/?lat=48.7887654119804&lon=2.3638803269592468)
+
+- Get metrics
+
+  [http://devops-20230580.francesouth.azurecontainer.io:8081/metrics](http://devops-20230580.francesouth.azurecontainer.io:8081/metrics)
+
 
 ## Example Response
-https://github.com/efrei-ADDA84/20230580
 ```
-docker run --env LAT="48.7887654119804" --env LON="2.3638803269592468" --env API_KEY="Your API Key" noebrt/meteo_checker:latest
+http://devops-20230580.francesouth.azurecontainer.io:8081/?lat=48.7887654119804&lon=2.3638803269592468
 ```
 Response:
 
