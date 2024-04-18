@@ -1,4 +1,4 @@
-# TP3 DevOps: Meteo Checker App And Auto-deployment on Docker
+# TP3 DevOps: Meteo Checker App And Auto-Deployment and running on Azure Container Registery
 
 The Meteo Checker App allows you to retrieve weather information using latitude and longitude coordinates via the OpenWeather API.
 
