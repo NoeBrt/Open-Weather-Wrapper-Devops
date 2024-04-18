@@ -63,7 +63,10 @@ The application is composed of two JavaScript scripts:
 
 ### Trivy
 
-```sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.18.3 noebrt/meteo_checker```
+```sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.18.3 meteo_checker```
+
+![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/c6e5379a-90fc-48c4-b296-f83128f78a63)
+
 
 ### Docker Scout
 
