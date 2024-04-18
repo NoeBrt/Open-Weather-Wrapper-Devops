@@ -35,6 +35,7 @@ app.get('/', async (req, res) => {
       return res.status(400).json({ error: 'Latitude and longitude are required' });
     }
     const data = await getWeatherData(lat, lon,apiKey,units);
+    httpRequestCounter.inc(); // Increment the counter for each request
     res.json(data);
   } catch (error) {
     res.status(500).json({ error: error.message });
