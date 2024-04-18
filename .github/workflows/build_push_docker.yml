@@ -50,3 +50,4 @@ jobs:
           name: 20230580
           secure-environment-variables: API_KEY=$({secrets.OPENWEATHER_API_KEY})
           location: 'francesouth'
+          ports: 8081
