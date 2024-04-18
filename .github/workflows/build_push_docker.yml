@@ -18,14 +18,29 @@ jobs:
       with:
         dockerfile: "./Dockerfile"
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: 'Login via Azure CLI'
+          uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Build Docker image
-      run: docker build -t noebrt/meteo_checker:latest .
+        - name: 'Build and push image'
+          uses: docker/login-action@v3
+          with:
+            registry: efreidevops.azurecr.io
+            password: ${{ secrets.AZURE_CLIENT_SECRET }}
+        - run: |
+            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230580:${{ github.sha }}
+            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230580:${{ github.sha }}
 
-    - name: Push Docker image
-      run: docker push noebrt/meteo_checker:latest
+        - name: 'Deploy to Azure Container Instances'
+          uses: 'azure/aci-deploy@v1'
+          with:
+            resource-group: ${{ secrets.RESOURCE_GROUP }}
+            dns-name-label: devops-20230580
+            image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230580:${{ github.sha }}
+            registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+            registry-username: ${{ secrets.REGISTRY_USERNAME }}
+            registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+            name: aci-meteo_checker
+            secure-environment-variables: API_KEY=$({secrets.OPENWEATHER_API_KEY})
+            location: 'francecentral'
