@@ -1,9 +1,11 @@
-# TP3 DevOps: Meteo Checker App And Auto-Deployment and running on Azure Container Registery
+# TP3 DevOps: Meteo Checker App And Auto-push on Azure Container Registery then deployed as an Azure Container Instance
 
 The Meteo Checker App allows you to retrieve weather information using latitude and longitude coordinates via the OpenWeather API.
 
+
 ## Table of Contents
 
+- [TP3 DevOps: Meteo Checker App And Auto-push on Azure Container Registery then deployed as an Azure Container Instance](#tp3-devops-meteo-checker-app-and-auto-push-on-azure-container-registery-then-deployed-as-an-azure-container-instance)
   - [Table of Contents](#table-of-contents)
   - [Lab Aims](#lab-aims)
   - [Languages Used](#languages-used)
@@ -25,11 +27,11 @@ The Meteo Checker App allows you to retrieve weather information using latitude 
 ## Lab Aims
 
 * We should use the app as an API ✓
-* **Run** the app Docker image with `docker run -p 8080:8080 --env API_KEY="YOUR API KEY" noebrt/meteo_checker` ✓
-* **Request** our app with a **cURL query**: `curl "http://localhost:8080/?lat=48.75722028315804&lon=2.3261414356815058"` ✓
-* Automate the build and the push of a Docker image after each push with a **GitHub Action Workflow** ✓
+* **Deploy** our app trought a Azure Container Instance at the endpoint [http://devops-20230580.francesouth.azurecontainer.io:8081/?lat=5.902785&lon=102.754175](http://devops-20230580.francesouth.azurecontainer.io:8081/?lat=5.902785&lon=102.754175) ✓
+* Automate the build and the push of a Docker image after each push on ACR with a **GitHub Action Workflow** ✓
 * No sensitive variables should be stored in the app files ✓
 * The Dockerfile should be checked with Hadolint before Docker build ✓
+* Use prometheus to monitor the app at the endpoint **/metrics** : [check here](http://devops-20230580.francesouth.azurecontainer.io:8081/metrics) ✓
 
 ## Languages Used
 
@@ -42,6 +44,7 @@ JavaScript (Node JS Alpine 3.19)
 * Tar 1.35-r2
 * Dotenv 16.4.5 (Usage of environment variables)
 * Express 4.19.2 (Creation of the API)
+* Prom-client 13.0.0 (Prometheus client for Node.js)
 
 The choice of versions is related to their lack of vulnerabilities.
 
@@ -61,7 +64,6 @@ The application is composed of two JavaScript scripts:
 ### Trivy
 
 ```sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.18.3 noebrt/meteo_checker```
-<img width="900" alt="Capture d’écran 2024-04-13 à 21 14 46" src="https://github.com/efrei-ADDA84/20230580/assets/94910317/4d6d82c8-0481-4631-91b3-32652f017234">
 
 ### Docker Scout
 
