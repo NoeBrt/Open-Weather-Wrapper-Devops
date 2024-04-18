@@ -18,7 +18,7 @@ const httpRequestCounter = new client.Counter({
   registers: [register]
 });
 
-//display total number of requests
+//display prometeus metrics
 app.get('/metrics', async (req, res) => {
   try {
     res.set('Content-Type', register.contentType);
