@@ -20,7 +20,7 @@ RUN apk update && apk upgrade && apk add --no-cache openssl=3.1.4-r6 && apk add 
 
 COPY . .
 #install node dependancies
-RUN npm install dotenv@16.4.5 && npm install express@4.19.2
+RUN npm install dotenv@16.4.5 && npm install express@4.19.2 && npm install prom-client@13.0.0
 
 # Step 6: Expose the port your app runs on
 EXPOSE 8080

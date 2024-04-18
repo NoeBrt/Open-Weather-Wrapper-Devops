@@ -6,6 +6,28 @@ const apiKey=process.env.API_KEY;
 const units="metter";
 const port = process.env.PORT || 8081;
 
+//setup prometheus
+const client = require('prom-client');
+const register = new client.Registry();
+client.collectDefaultMetrics({ register });
+
+//create a counter metrics
+const httpRequestCounter = new client.Counter({
+  name: 'http_requests_total',
+  help: 'Total number of HTTP requests',
+  registers: [register]
+});
+
+//display total number of requests
+app.get('/metrics', async (req, res) => {
+  try {
+    res.set('Content-Type', register.contentType);
+    res.send(await register.metrics());
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
 app.get('/', async (req, res) => {
   try {
     const { lat, lon } = req.query;
