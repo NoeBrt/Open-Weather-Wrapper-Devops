@@ -173,4 +173,3 @@ The Meteo_Checker app workflow is structured in a few steps:
 ## Conclusion 
 
 Same as the tp2, This lab showed me the importance of having a smooth process to deploy our applications. It's going to be really helpful for my Edge AI work at Ecole Polytechnique. We need to figure out how to set up a Nvidia Deepstream Computer Vision app on a bunch of Nvidia Jetson Nano devices, and there are a lot of Nvidia Dependancies to deal with. Having a solid way to get things up and running is key, and what I learned here will be super useful for that. It's my first step toward setting up a real CI/CD pipeline. The push and deployement on ACR and as ACI show me a new way to store app images but also to use app directly on a cloud.
-
