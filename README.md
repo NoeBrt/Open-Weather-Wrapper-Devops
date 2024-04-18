@@ -68,7 +68,7 @@ The application is composed of two JavaScript scripts:
 
 Query the API with the ACI Endpoint or in your browser: ```http://devops-20230580.francesouth.azurecontainer.io:8081/?lat=' your latitude '&lon=' your longitude '"```
 
-Check the metrics like the number of request 
+Check the metrics like the number of request: ```http://devops-20230580.francesouth.azurecontainer.io:8081/metrics```
 
 ## Example Queries
 
