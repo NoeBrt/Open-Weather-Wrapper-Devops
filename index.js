@@ -4,7 +4,7 @@ const getWeatherData = require('./OpenWeatherWrapper'); // Import the weather da
 const app = express();
 const apiKey=process.env.API_KEY;
 const units="metter";
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 app.get('/', async (req, res) => {
   try {
