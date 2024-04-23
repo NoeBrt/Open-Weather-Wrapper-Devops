@@ -44,6 +44,8 @@ Execute the following command to create the infrastructure:
 ```bash
 terraform apply
 ```
+![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/979c14ba-d6c3-4336-9da1-8a0efdb0aecc)
+
 
 You will be prompted to review the proposed changes and approve them.
 
