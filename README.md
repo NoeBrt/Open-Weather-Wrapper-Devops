@@ -45,6 +45,7 @@ Execute the following command to create the infrastructure:
 terraform apply
 ```
 ![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/979c14ba-d6c3-4336-9da1-8a0efdb0aecc)
+![Capture d'écran 2024-04-21 213403](https://github.com/efrei-ADDA84/20230580/assets/94910317/eb209973-6c7c-4280-aba5-299634ede804)
 
 
 You will be prompted to review the proposed changes and approve them.
@@ -53,11 +54,11 @@ You will be prompted to review the proposed changes and approve them.
 
 Once the deployment is complete, connect to your VM using SSH:
 
-![Capture d'écran 2024-04-21 213403](https://github.com/efrei-ADDA84/20230580/assets/94910317/eb209973-6c7c-4280-aba5-299634ede804)
 
 ```bash
 ssh -i ./id_rsa devops@52.143.135.160
 ```
+![image](https://github.com/efrei-ADDA84/20230580/assets/94910317/85a00884-31b2-49b5-9d55-008f647cc96b)
 
 ### 5. Clean up Resources
 
