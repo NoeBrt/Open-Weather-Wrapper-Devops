@@ -37,15 +37,7 @@ Run the following command to initialize a working directory with Terraform confi
 terraform init
 ```
 
-### 3. Create SSH Keys
-
-Generate an SSH key pair if not already done:
-
-```bash
-ssh-keygen -t rsa -b 2048 -f ./id_rsa
-```
-
-### 4. Apply Terraform Plan
+### 3. Apply Terraform Plan
 
 Execute the following command to create the infrastructure:
 
@@ -55,15 +47,17 @@ terraform apply
 
 You will be prompted to review the proposed changes and approve them.
 
-### 5. Connect to Your VM
+### 4. Connect to Your VM
 
 Once the deployment is complete, connect to your VM using SSH:
 
+![Capture d'écran 2024-04-21 213403](https://github.com/efrei-ADDA84/20230580/assets/94910317/eb209973-6c7c-4280-aba5-299634ede804)
+
 ```bash
-ssh -i ./id_rsa devops@$(terraform output -raw public_ip_address)
+ssh -i ./id_rsa devops@52.143.135.160
 ```
 
-### 6. Clean up Resources
+### 5. Clean up Resources
 
 To destroy the Azure resources created by Terraform, run:
 
@@ -79,6 +73,3 @@ terraform destroy
 - `providers.tf` - Provider configuration for Terraform.
 - `ssh.tf` - Terraform configuration for SSH key management.
 
-## Contributing
-
-Contributions to this project are welcome! Please consider forking the repository and submitting a pull request.
